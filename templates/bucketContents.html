@@ -1,0 +1,32 @@
+<!doctype html>
+<h2>
+	Bucket Contents
+</h2>
+
+<h3>Upload a new file</h3>
+<form method="POST" action="uploadFile" enctype="multipart/form-data">
+	<input type="file" name="file" value="Choose file">
+	<input type="submit" value="Upload">
+</form>
+<br>
+<hr>
+
+<a href="{{ url_for('insertInline', fileName="NC_EST2015_AGESEX_RES.csv") }}">NC_EST2015_AGESEX_RES</a>	
+
+<table>
+<tr>
+	<td>File name</td>
+	<td>File size (byte)</td>
+</tr>
+{% for i in range(0, nameList|count) %}
+	<tr>
+		<td>
+			{{nameList[i]}}
+		</td>
+		<td>
+			{{sizeList[i]}}
+		</td>
+	</tr>
+{% endfor %}
+</table>
+

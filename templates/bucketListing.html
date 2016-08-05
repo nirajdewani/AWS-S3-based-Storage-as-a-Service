@@ -1,0 +1,17 @@
+<!doctype html>
+<h2>
+	Welcome to Timer app
+</h2>
+
+<table>
+	<tr>
+		<td>Bucket Name</td>
+	</tr>
+	{% for i in range(0, bucketList|count) %}
+	<tr>
+		<a href="{{ url_for('getBucketContents', bucketName=bucketList[i]) }}">{{bucketList[i]}}</a>
+	</tr>
+	{% endfor %}
+</table>
+
+
